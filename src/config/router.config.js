@@ -21,8 +21,7 @@ export const asyncRouterMap = [
         name: 'dashboard',
         redirect: '/dashboard/analysis',
         component: RouteView,
-        // hideChildrenInMenu: true,
-        meta: { title: '仪表盘', keepAlive: true, icon: 'el-icon-platform-eleme', permission: ['dashboard'] },
+        meta: { title: 'menu.dashboard', keepAlive: true, icon: 'el-icon-platform-eleme', permission: ['dashboard'] },
         children: [
           {
             path: '/dashboard/analysis',
@@ -43,8 +42,7 @@ export const asyncRouterMap = [
         name: 'Test',
         redirect: '/test/analysis',
         component: RouteView,
-        // hideChildrenInMenu: true,
-        meta: { title: '仪表盘', keepAlive: true, icon: 'el-icon-platform-eleme', permission: ['dashboard'] },
+        meta: { title: 'menu.dashboard.monitor', keepAlive: true, icon: 'el-icon-platform-eleme', permission: ['dashboard'] },
         children: [
           // {
           //   path: '/test/analysis',

@@ -6,6 +6,7 @@
 
 <script>
 import RouteMenu from './RouteMenu'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'SiderMenu',
@@ -21,13 +22,19 @@ export default {
   },
   components: {
     RouteMenu
+  },
+  computed: {
+    ...mapGetters(['sideBarHide'])
   }
 }
 </script>
 
 <style scoped lang="scss">
+  @import "~@/styles/variables.scss";
+
   .sider-container {
+    background-color: #001529;
     height: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
   }
 </style>

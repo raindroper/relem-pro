@@ -4,10 +4,10 @@
     :collapse="sideBarHide"
     background-color="#001529"
     text-color="#fff"
-    :collapse-transition="false"
+    :collapse-transition="true"
     :default-active="currentRouteName"
   >
-    <h1 style="color: #fff">logo</h1>
+    <div class="logo">logo</div>
     <menu-item v-for="i in menus" :item="i" :key="i.path"/>
   </el-menu>
 </template>
@@ -43,13 +43,22 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import "~@/styles/variables.scss";
+
+  .logo {
+    display: inline-block;
+    width: calc(100% - 2px);
+    color: #ffffff;
+    height: 64px;
+  }
+
   .sider-menu {
     height: 100%;
   }
 
   .sider-menu:not(.el-menu--collapse) {
-    width: 199px;
+    width: $sideBarWidth;
     min-height: 400px;
   }
 </style>

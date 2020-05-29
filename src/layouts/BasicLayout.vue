@@ -4,17 +4,11 @@
     @change="handleMediaQuery"
   >
     <el-container class="container">
-      <el-aside :width="200">
-        <sider-menu :collapsed="collapsed"/>
-      </el-aside>
-      <el-container>
-        <el-header>
-          <button @click="changeCollapsed">header</button>
-        </el-header>
-        <el-main>
-          <router-view/>
-        </el-main>
-      </el-container>
+      <sider-menu :collapsed="collapsed"/>
+      <div class="main-container">
+        <nav-bar/>
+        <router-view/>
+      </div>
     </el-container>
   </container-query>
 </template>
@@ -22,8 +16,8 @@
 <script>
 import { ContainerQuery } from 'vue-container-query'
 import SiderMenu from './components/SiderMenu'
-import { mapMutations } from 'vuex'
-import { TOGGLE_SIDE_BAR } from '../store/mutation-types'
+import NavBar from './components/NavBar/Index'
+import variables from '@/styles/variables.scss'
 
 console.log('containerQuery', ContainerQuery)
 
@@ -56,22 +50,20 @@ export default {
   name: 'BasicLayout',
   components: {
     ContainerQuery,
-    SiderMenu
+    SiderMenu,
+    NavBar
   },
   data () {
     return {
       MediaQueryEnum,
-      collapsed: false
+      collapsed: false,
+      sideBarWidth: 210,
+      variables
     }
   },
   methods: {
-    ...mapMutations([TOGGLE_SIDE_BAR]),
     handleMediaQuery (val) {
       console.log(val)
-    },
-    changeCollapsed () {
-      console.log('changeCollapsed')
-      this[TOGGLE_SIDE_BAR]()
     }
   }
 }
@@ -80,5 +72,9 @@ export default {
 <style scoped lang="scss">
   .container {
     height: 100%;
+
+    .main-container {
+      width: 100%;
+    }
   }
 </style>
