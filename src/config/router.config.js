@@ -1,10 +1,5 @@
 // eslint-disable-next-line
-import { UserLayout, BasicLayout } from '@/layouts'
-
-const RouteView = {
-  name: 'RouteView',
-  render: (h) => h('router-view')
-}
+import { UserLayout, BasicLayout, RouteView } from '@/layouts'
 
 export const asyncRouterMap = [
 
@@ -27,7 +22,12 @@ export const asyncRouterMap = [
             path: '/dashboard/analysis',
             name: 'Analysis',
             component: () => import('@/views/dashboard/Analysis'),
-            meta: { title: '分析盘', keepAlive: false, icon: 'el-icon-platform-eleme', permission: ['dashboard'] }
+            meta: {
+              title: 'menu.dashboard.analysis',
+              keepAlive: false,
+              icon: 'el-icon-platform-eleme',
+              permission: ['dashboard']
+            }
           },
           {
             path: '/dashboard/analysis2',
@@ -38,11 +38,31 @@ export const asyncRouterMap = [
         ]
       },
       {
+        path: '/table',
+        name: 'Table',
+        redirect: '/table/search',
+        component: RouteView,
+        meta: { title: 'menu.table', keepAlive: false, icon: 'fa-rocket', permission: ['table'] },
+        children: [
+          {
+            path: '/table/search',
+            name: 'SearchTable',
+            component: () => import('@/views/table/SearchTable'),
+            meta: { title: 'menu.table.search', keepAlive: false, icon: 'fa-rocket', permission: ['table'] }
+          }
+        ]
+      },
+      {
         path: '/test',
         name: 'Test',
         redirect: '/test/analysis',
         component: RouteView,
-        meta: { title: 'menu.dashboard.monitor', keepAlive: true, icon: 'el-icon-platform-eleme', permission: ['dashboard'] },
+        meta: {
+          title: 'menu.dashboard.monitor',
+          keepAlive: true,
+          icon: 'el-icon-platform-eleme',
+          permission: ['dashboard']
+        },
         children: [
           // {
           //   path: '/test/analysis',

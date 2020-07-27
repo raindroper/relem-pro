@@ -135,7 +135,7 @@ export default {
 
           a {
             color: rgba(0, 0, 0, 0.45);
-            transition: all 0.3s;
+            transition: all 0.28s;
 
             &:not(:last-child) {
               margin-right: 40px;

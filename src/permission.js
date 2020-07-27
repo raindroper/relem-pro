@@ -2,7 +2,7 @@ import router from './router'
 import store from './store'
 import storage from 'store'
 import NProgress from 'nprogress' // progress bar
-// import '@/components/NProgress/nprogress.less' // progress bar custom style
+import '@/components/NProgress/nprogress.scss' // progress bar custom style
 import { Notification } from 'element-ui'
 import { setDocumentTitle, domTitle } from '@/utils/domUtil'
 import { ACCESS_TOKEN } from '@/store/mutation-types'
@@ -15,7 +15,9 @@ const loginRoutePath = '/user/login'
 const defaultRoutePath = '/dashboard/workplace'
 
 router.beforeEach((to, from, next) => {
+  console.log('beforeEach')
   NProgress.start() // start progress bar
+  console.log(NProgress)
   to.meta && (typeof to.meta.title !== 'undefined' && setDocumentTitle(`${i18nRender(to.meta.title)} - ${domTitle}`))
   /* has token */
   if (storage.get(ACCESS_TOKEN)) {
@@ -30,8 +32,12 @@ router.beforeEach((to, from, next) => {
           .dispatch('GetInfo')
           .then(res => {
             const roles = res.result && res.result.role
+
+            // 基于角色
+            const authType = 1 // 1为admin
+
             // generate dynamic router
-            store.dispatch('GenerateRoutes', { roles }).then(() => {
+            store.dispatch('GenerateRoutes', { roles, authType }).then(() => {
               // 根据roles权限生成可访问的路由表
               // 动态添加可访问路由表
               router.addRoutes(store.getters.addRouters)
@@ -72,5 +78,6 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach(() => {
+  console.log('done')
   NProgress.done() // finish progress bar
 })

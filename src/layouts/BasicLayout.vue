@@ -4,10 +4,12 @@
     @change="handleMediaQuery"
   >
     <el-container class="container">
-      <sider-menu :collapsed="collapsed"/>
-      <div class="main-container">
+      <sider-menu class="sider-wrapper layout-sidebar transition" :class="{collapsed: sideBarHide}" :collapsed="collapsed"/>
+      <div class="main-container layout-content" :class="{'collapsed': !sideBarHide}">
         <nav-bar/>
-        <router-view/>
+        <main class="layout-content-main">
+          <router-view/>
+        </main>
       </div>
     </el-container>
   </container-query>
@@ -18,6 +20,7 @@ import { ContainerQuery } from 'vue-container-query'
 import SiderMenu from './components/SiderMenu'
 import NavBar from './components/NavBar/Index'
 import variables from '@/styles/variables.scss'
+import { mapGetters } from 'vuex'
 
 console.log('containerQuery', ContainerQuery)
 
@@ -65,6 +68,9 @@ export default {
     handleMediaQuery (val) {
       console.log(val)
     }
+  },
+  computed: {
+    ...mapGetters(['sideBarHide'])
   }
 }
 </script>
@@ -72,9 +78,26 @@ export default {
 <style scoped lang="scss">
   .container {
     height: 100%;
+    width: 100vw;
+    justify-content: flex-start;
+
+    .sider-container {
+      flex: 0 0 210px;
+      width: 210px;
+      max-width: 210px;
+      min-width: 210px;
+      &.collapsed {
+        flex: 0 0 64px;
+        width: 64px;
+        max-width: 64px;
+        min-width: 64px;
+      }
+    }
 
     .main-container {
-      width: 100%;
+      overflow-x: hidden;
+      flex: auto;
+      min-height: 100vh;
     }
   }
 </style>

@@ -1,0 +1,40 @@
+//@import '~ant-design-vue/es/style/themes/default.less';
+
+html,
+body,
+#app, #root {
+  height: 100%;
+}
+
+.transition {
+  transition: all 0.28s;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+a {
+  text-decoration: none;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+

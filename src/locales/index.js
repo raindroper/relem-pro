@@ -3,8 +3,8 @@ import VueI18n from 'vue-i18n'
 import storage from 'store'
 // import moment from 'moment'
 import ElementLocale from 'element-ui/lib/locale'
-import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
-import enLocale from 'element-ui/lib/locale/lang/en'
+// import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
+// import enLocale from 'element-ui/lib/locale/lang/en'
 // default lang
 import zhCN from './lang/zh-CN'
 import enUS from './lang/en'
@@ -15,11 +15,11 @@ export const defaultLang = 'zh-CN'
 
 const messages = {
   'zh-CN': {
-    ...zhLocale,
+    // ...zhLocale,
     ...zhCN
   },
   'en-Us': {
-    ...enLocale,
+    // ...enLocale,
     ...enUS
   }
 }

@@ -14,9 +14,9 @@ export default {
   },
   computed: {
     locale () {
+      console.log('locale!!')
       // 只是为了切换语言时，更新标题
       const { title } = this.$route.meta
-      console.log('title', title)
       title && (setDocumentTitle(`${i18nRender(title)} - ${domTitle}`))
 
       return this.$i18n.getLocaleMessage(this.$store.getters.lang)

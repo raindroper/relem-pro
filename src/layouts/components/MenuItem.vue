@@ -1,24 +1,3 @@
-<!--<template>-->
-<!--  <div v-if="!item.hidden">-->
-<!--    <template v-if="!hasShowingChild(item.children, item) || item.hideChildrenInMenu">-->
-<!--      <router-link :to="{name: item.name}">-->
-<!--        <el-menu-item :index="item.name">-->
-<!--          <i :class="item.meta.icon"></i>-->
-<!--          <span slot="title">{{item.meta.title}}</span>-->
-<!--        </el-menu-item>-->
-<!--      </router-link>-->
-<!--    </template>-->
-<!--    <el-submenu v-else-->
-<!--                :index="item.name" popper-append-to-body>-->
-<!--      <template slot="title">-->
-<!--        <i :class="item.meta.icon"></i>-->
-<!--        <span slot="title">{{item.meta.title}}</span>-->
-<!--      </template>-->
-<!--      <menu-item v-for="child in item.children" :item="child" :key="child.name" :index="child.name"></menu-item>-->
-<!--    </el-submenu>-->
-<!--  </div>-->
-<!--</template>-->
-
 <script>
 import { i18nRender } from '@/locales'
 

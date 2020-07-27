@@ -2,10 +2,11 @@
   <el-menu
     class="sider-menu"
     :collapse="sideBarHide"
-    background-color="#001529"
-    text-color="#fff"
+    text-color="#808c95"
     :collapse-transition="true"
     :default-active="currentRouteName"
+    :unique-opened="true"
+    @open="subMenuOpen"
   >
     <div class="logo">logo</div>
     <menu-item v-for="i in menus" :item="i" :key="i.path"/>
@@ -24,6 +25,12 @@ export default {
   data () {
     return {
       menus: []
+    }
+  },
+  methods: {
+    subMenuOpen (index) {
+      // 展开菜单跳转subMenu路由，配合route的redirect自动跳转第一个(自行配置)子菜单
+      this.$router.push({ name: index })
     }
   },
   computed: {
@@ -55,6 +62,7 @@ export default {
 
   .sider-menu {
     height: 100%;
+    border-right: none;
   }
 
   .sider-menu:not(.el-menu--collapse) {

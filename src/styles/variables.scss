@@ -7,6 +7,7 @@ $green: #30B08F;
 $tiffany: #4AB7BD;
 $yellow:#FEC171;
 $panGreen: #30B08F;
+$primaryColor: $blue;
 
 // sidebar
 $menuText:#bfcbd9;
@@ -32,4 +33,5 @@ $sideBarWidth: 210px;
   subMenuBg: $subMenuBg;
   subMenuHover: $subMenuHover;
   sideBarWidth: $sideBarWidth;
+  primaryColor: $primaryColor;
 }

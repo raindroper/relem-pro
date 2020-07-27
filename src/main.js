@@ -11,7 +11,8 @@ import './mock'
 import bootstrap from './core/bootstrap'
 import './permission' // permission control
 import './utils/filter' // global filter
-import './global.scss'
+import './styles/index.scss'
+import './assets/font-awesome/font-awesome.css'
 
 locale.use(lang)
 

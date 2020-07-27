@@ -2,6 +2,9 @@ import Vue from 'vue'
 import '@/config/element-variables.scss'
 // base library
 import {
+  Row,
+  Col,
+  Pagination,
   Button,
   Select,
   Tabs,
@@ -23,7 +26,15 @@ import {
   DropdownItem,
   DropdownMenu,
   MessageBox,
-  Avatar
+  Table,
+  TableColumn,
+  Breadcrumb,
+  BreadcrumbItem,
+  Avatar,
+  Checkbox,
+  Tag,
+  Popover,
+  Loading
 } from 'element-ui'
 // ext library
 // import VueCropper from 'vue-cropper'
@@ -32,6 +43,10 @@ import {
 // import PageLoading from '@/components/PageLoading'
 import PermissionHelper from '@/utils/helper/permission'
 // import './directives/action'
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Pagination)
+Vue.use(Checkbox)
 Vue.use(Button)
 Vue.use(Select)
 Vue.use(Tabs)
@@ -50,13 +65,21 @@ Vue.use(MenuItem)
 Vue.use(Submenu)
 Vue.use(Dropdown)
 Vue.use(DropdownItem)
+Vue.use(Table)
+Vue.use(TableColumn)
 Vue.use(DropdownMenu)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Tag)
+Vue.use(Popover)
 // Vue.use(MessageBox)
 Vue.use(Avatar)
+Vue.use(Loading.directive)
 Vue.prototype.$alert = MessageBox.alert
 Vue.prototype.$confirm = MessageBox.confirm
 Vue.prototype.$prompt = MessageBox.prompt
 Vue.prototype.$notification = Notification
+Vue.prototype.$loading = Loading.service
 // Vue.prototype.$info = Modal.info
 // Vue.prototype.$success = Modal.success
 // Vue.prototype.$error = Modal.error
