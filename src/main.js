@@ -13,6 +13,9 @@ import './permission' // permission control
 import './utils/filter' // global filter
 import './styles/index.less'
 import './assets/font-awesome/font-awesome.css'
+import { VueAxios } from './utils/request'
+
+Vue.use(VueAxios)
 
 // locale.use(lang)
 

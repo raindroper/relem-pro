@@ -100,7 +100,16 @@ export default {
     onSubmit () {
       console.log('onSubmit')
       this.$refs.table.reload()
+    },
+    testAPI () {
+      this.$http({
+        method: 'GET',
+        url: 'http://localhost:3000/test'
+      })
     }
+  },
+  created () {
+    this.testAPI()
   }
 }
 </script>
