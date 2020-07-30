@@ -60,8 +60,6 @@ export default {
     },
     toggleLang (lang) {
       console.log(lang)
-      // lang = lang || this.$i18n.locale === 'en' ? 'zh-CN' : 'en'
-      // console.log(lang)
       this.setLang(lang)
     }
   },
@@ -74,23 +72,18 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
   .hover {
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.025);
+      background-color: rgba(0, 0, 0, 0.045);
     }
   }
 
   .nav-bar {
-    width: 100%;
-    height: 64px;
-    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /*width: 100%;*/
 
     .nav-left {
       height: 100%;

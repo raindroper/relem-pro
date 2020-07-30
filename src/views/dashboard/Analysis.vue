@@ -12,6 +12,7 @@
         <template slot-scope="scope">
           <el-button
             size="mini"
+            type="primary"
             @click="handleEdit(scope.$index, scope.row)">编辑
           </el-button>
           <el-button
@@ -53,6 +54,12 @@ export default {
     }
   },
   methods: {
+    timeChange (argument, type) {
+      const dataString = argument[1] // 这里看下源码确认一下索引
+      this.formData.contract_signing_time = dataString
+      console.log(argument)
+      console.log(type)
+    },
     handleEdit (index, row) {
       console.log(index, row)
     },

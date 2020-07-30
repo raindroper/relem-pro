@@ -2,7 +2,6 @@
   <el-menu
     class="sider-menu"
     :collapse="sideBarHide"
-    text-color="#808c95"
     :collapse-transition="true"
     :default-active="currentRouteName"
     :unique-opened="true"
@@ -50,8 +49,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-  @import "~@/styles/variables.scss";
+<style scoped lang="less">
+  @import "~@/styles/variables.less";
 
   .logo {
     display: inline-block;
@@ -66,7 +65,7 @@ export default {
   }
 
   .sider-menu:not(.el-menu--collapse) {
-    width: $sideBarWidth;
+    width: @sideBarWidth;
     min-height: 400px;
   }
 </style>

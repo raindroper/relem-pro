@@ -29,8 +29,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-  /*@import "~@/styles/variables.scss";*/
+<style scoped lang="less">
 
   .sider-container {
     height: 100%;

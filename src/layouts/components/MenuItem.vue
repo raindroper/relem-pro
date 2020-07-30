@@ -28,7 +28,6 @@ export default {
         </template>
         {
           this.item.children && this.item.children.length > 0 && this.item.children.map(child => {
-            console.log(this.item)
             return <menu-item item={child} key={child.name} index={child.name}/>
           })
         }

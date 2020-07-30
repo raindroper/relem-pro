@@ -6,7 +6,7 @@
           <el-input v-model="queryForm.user"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="onSubmit">查询</el-button>
+          <el-button v-action:add type="primary" @click="onSubmit">查询</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -18,6 +18,10 @@
       <span slot="serial" slot-scope="scope, index">
         {{ index }}
       </span>
+      <template slot="action">
+        <el-button>删除</el-button>
+        <el-button>删除2</el-button>
+      </template>
     </data-table>
   </div>
 </template>
@@ -53,7 +57,7 @@ const columns = [
     prop: 'callNo',
     sorter: true,
     needTotal: true,
-    customRender: (text) => text + ' 次'
+    render: (row, index, text) => text + ' 次'
   },
   {
     label: '状态',
@@ -69,7 +73,7 @@ const columns = [
     label: '操作',
     prop: 'action',
     width: '150px',
-    scopedSlots: { customRender: 'action' }
+    slotName: 'action'
   }
 ]
 

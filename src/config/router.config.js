@@ -23,7 +23,7 @@ export const asyncRouterMap = [
             name: 'Analysis',
             component: () => import('@/views/dashboard/Analysis'),
             meta: {
-              title: 'menu.dashboard.analysis',
+              title: 'menu.dashboard-analysis',
               keepAlive: false,
               icon: 'el-icon-platform-eleme',
               permission: ['dashboard']
@@ -48,7 +48,22 @@ export const asyncRouterMap = [
             path: '/table/search',
             name: 'SearchTable',
             component: () => import('@/views/table/SearchTable'),
-            meta: { title: 'menu.table.search', keepAlive: false, icon: 'fa-rocket', permission: ['table'] }
+            meta: { title: 'menu.table-search', keepAlive: false, icon: 'fa-rocket', permission: ['table'] }
+          }
+        ]
+      },
+      {
+        path: '/form',
+        name: 'Table',
+        redirect: '/form/standard',
+        component: RouteView,
+        meta: { title: 'menu.form', keepAlive: false, icon: 'fa-rocket', permission: ['form'] },
+        children: [
+          {
+            path: '/form/standard',
+            name: 'StandardForm',
+            component: () => import('@/views/form/StandardForm'),
+            meta: { title: 'menu.form-standard', keepAlive: false, icon: 'fa-rocket', permission: ['form'] }
           }
         ]
       },
@@ -58,7 +73,7 @@ export const asyncRouterMap = [
         redirect: '/test/analysis',
         component: RouteView,
         meta: {
-          title: 'menu.dashboard.monitor',
+          title: 'menu.dashboard-monitor',
           keepAlive: true,
           icon: 'el-icon-platform-eleme',
           permission: ['dashboard']

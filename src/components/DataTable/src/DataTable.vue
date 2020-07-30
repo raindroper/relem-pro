@@ -106,7 +106,7 @@ export default {
         this.localPagination = (this.showPagination && Object.assign({}, this.localPagination, {
           // TODO 此处需要根据接口修改
           current: res.pageNo,
-          total: res.total,
+          total: res.totalCount,
           showSizeChanger: this.showSizeChanger,
           pageSize: (pagination && pagination.pageSize) || this.localPagination.pageSize
         })) || false
@@ -314,10 +314,10 @@ export default {
 
     const colRender = (col, props, index) => {
       if (col.slotName) {
-        return ($scopedSlots[col.slotName](props.row, index, props.row[col.prop]) || props.row[col.prop])
+        return ($scopedSlots[col.slotName] && ($scopedSlots[col.slotName](props.row, index, props.row[col.prop]) || props.row[col.prop]))
       }
       if (col.render) {
-        return (<span>{col.render(props.row)}</span>)
+        return (<span>{col.render(props.row, index, props.row[col.prop])}</span>)
       }
       if (col.statusTag) {
         return (<status-tag value={props.row[col.prop]} statusList={col.statusTag(props.row)}/>)

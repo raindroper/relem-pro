@@ -57,6 +57,7 @@ const user = {
             const role = result.role
             role.permissions = result.role.permissions
             role.permissions.map(per => {
+              // 遍历permission中actionEntitySet，取其action组成数组放入actionList
               if (per.actionEntitySet != null && per.actionEntitySet.length > 0) {
                 const action = per.actionEntitySet.map(action => {
                   return action.action
@@ -64,6 +65,7 @@ const user = {
                 per.actionList = action
               }
             })
+            // 遍历permission中的permissionId放入role.permissionList中
             role.permissionList = role.permissions.map(permission => {
               return permission.permissionId
             })

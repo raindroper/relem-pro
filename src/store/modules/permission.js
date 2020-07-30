@@ -38,8 +38,9 @@ function hasRole (roles, route) {
 }
 
 function filterAsyncRouter (routerMap, roles, authType) {
+  console.log('roles', roles)
   const accessedRouters = routerMap.filter(route => {
-    if (authType === 1) return true
+    // if (authType === 1) return true
     if (hasPermission(roles.permissionList, route)) {
       if (route.children && route.children.length) {
         route.children = filterAsyncRouter(route.children, roles)

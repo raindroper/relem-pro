@@ -120,7 +120,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
   .login_wrapper {
     min-width: 260px;
     width: 368px;

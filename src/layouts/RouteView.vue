@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
   .route-view {
     background-color: #fff;
     padding: 16px;

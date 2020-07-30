@@ -41,24 +41,19 @@ function setI18nLanguage (lang) {
 }
 
 export function loadLanguageAsync (lang = defaultLang) {
-  console.log(1)
   return new Promise(resolve => {
     // 缓存语言设置
     storage.set('lang', lang)
-    console.log(2)
     if (i18n.locale !== lang) {
       if (!loadedLanguages.includes(lang)) {
         return import(/* webpackChunkName: "lang-[request]" */ `./lang/${lang}`).then(msg => {
           const locale = msg.default
-          console.log(3)
           i18n.setLocaleMessage(lang, locale)
-          console.log(4)
           loadedLanguages.push(lang)
           // moment.updateLocale(locale.momentName, locale.momentLocale)
           return setI18nLanguage(lang)
         })
       }
-      console.log(5)
       return resolve(setI18nLanguage(lang))
     }
     return resolve(lang)

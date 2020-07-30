@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import '@/config/element-variables.scss'
 // base library
 import {
   Row,
@@ -42,7 +41,7 @@ import {
 // import MultiTab from '@/components/MultiTab'
 // import PageLoading from '@/components/PageLoading'
 import PermissionHelper from '@/utils/helper/permission'
-// import './directives/action'
+import './directives/action'
 Vue.use(Row)
 Vue.use(Col)
 Vue.use(Pagination)

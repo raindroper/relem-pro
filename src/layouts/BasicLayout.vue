@@ -19,10 +19,7 @@
 import { ContainerQuery } from 'vue-container-query'
 import SiderMenu from './components/SiderMenu'
 import NavBar from './components/NavBar/Index'
-import variables from '@/styles/variables.scss'
 import { mapGetters } from 'vuex'
-
-console.log('containerQuery', ContainerQuery)
 
 const MediaQueryEnum = {
   'screen-xs': {
@@ -60,8 +57,7 @@ export default {
     return {
       MediaQueryEnum,
       collapsed: false,
-      sideBarWidth: 210,
-      variables
+      sideBarWidth: 210
     }
   },
   methods: {
@@ -75,7 +71,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
   .container {
     height: 100%;
     width: 100vw;

@@ -31,34 +31,24 @@ const info = (options) => {
     'deleted': 0,
     'permissions': [
       {
-        'roleId': 'admin',
-        'permissionId': 'dashboard',
-        'permissionName': '仪表盘',
+        'roleId': 'admin',  // roleId
+        'permissionId': 'dashboard',  // permissionId 用于标记页面的权限
+        'permissionName': '仪表盘',  // permissionName
+        // 用于描述该页面所拥有的action，非必需，可用来编辑权限(角色)页面做展示
         'actions': '[{"action":"add","defaultCheck":false,"describe":"新增"},{"action":"query","defaultCheck":false,"describe":"查询"},{"action":"get","defaultCheck":false,"describe":"详情"},{"action":"update","defaultCheck":false,"describe":"修改"},{"action":"delete","defaultCheck":false,"describe":"删除"}]',
+        // 当前页面权限设置
         'actionEntitySet': [
           {
-            'action': 'add',
-            'describe': '新增',
-            'defaultCheck': false
+            'action': 'add', // action标记位(ID)
+            'describe': '新增', // action描述
+            'defaultCheck': false // 可用于编辑页面是否默认选中 非必需
           }, {
             'action': 'query',
             'describe': '查询',
             'defaultCheck': false
-          }, {
-            'action': 'get',
-            'describe': '详情',
-            'defaultCheck': false
-          }, {
-            'action': 'update',
-            'describe': '修改',
-            'defaultCheck': false
-          }, {
-            'action': 'delete',
-            'describe': '删除',
-            'defaultCheck': false
           }],
-        'actionList': null,
-        'dataAccess': null
+        'actionList': null, // actionEntitySet遍历后取action组成数组
+        'dataAccess': null // 预留字段
       },
       {
         'roleId': 'admin',
@@ -117,7 +107,8 @@ const info = (options) => {
         }],
         'actionList': null,
         'dataAccess': null
-      }, {
+      },
+      {
         'roleId': 'admin',
         'permissionId': 'profile',
         'permissionName': '详细页权限',

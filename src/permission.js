@@ -2,7 +2,7 @@ import router from './router'
 import store from './store'
 import storage from 'store'
 import NProgress from 'nprogress' // progress bar
-import '@/components/NProgress/nprogress.scss' // progress bar custom style
+import '@/components/NProgress/nprogress.less' // progress bar custom style
 import { Notification } from 'element-ui'
 import { setDocumentTitle, domTitle } from '@/utils/domUtil'
 import { ACCESS_TOKEN } from '@/store/mutation-types'
@@ -15,9 +15,7 @@ const loginRoutePath = '/user/login'
 const defaultRoutePath = '/dashboard/workplace'
 
 router.beforeEach((to, from, next) => {
-  console.log('beforeEach')
   NProgress.start() // start progress bar
-  console.log(NProgress)
   to.meta && (typeof to.meta.title !== 'undefined' && setDocumentTitle(`${i18nRender(to.meta.title)} - ${domTitle}`))
   /* has token */
   if (storage.get(ACCESS_TOKEN)) {

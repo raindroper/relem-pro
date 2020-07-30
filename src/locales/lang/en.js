@@ -1,13 +1,10 @@
 import enLocale from 'element-ui/lib/locale/lang/en'
+import menu from './en/menu'
 
 const locale = {
   ...enLocale,
   message: '-',
-  'menu.home': 'Home',
-  'menu.dashboard': 'Dashboard',
-  'menu.dashboard.analysis': 'Analysis',
-  'menu.dashboard.monitor': 'Monitor',
-  'menu.dashboard.workplace': 'Workplace',
+  ...menu,
 
   'layouts.usermenu.dialog.title': 'Message',
   'layouts.usermenu.dialog.content': 'Do you really log-out.',

@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
   #userLayout.user-layout-wrapper {
     height: 100%;
 
